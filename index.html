@@ -932,9 +932,11 @@
         </div>
       </div>
       <div class="rvr">
-        <form class="c-form" id="cForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display:none;"><label>Ne pas remplir : <input name="bot-field"></label></p>
+        <form class="c-form" id="cForm" action="https://formsubmit.co/contact@almax-partners.com" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande de contact - ALMAX Partners">
+          <input type="hidden" name="_next" value="https://almax-partners.com">
+          <input type="hidden" name="_captcha" value="false">
+          <p style="display:none;"><label>Ne pas remplir : <input name="_honey"></label></p>
           <div class="f-row">
             <div class="fld"><label>Nom complet</label><input type="text" name="nom" placeholder="Jean Dupont" required></div>
             <div class="fld"><label>Société</label><input type="text" name="societe" placeholder="Votre société" required></div>
@@ -1038,12 +1040,6 @@
     document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
 
     /* ── Form ── */
-    document.getElementById('cForm').addEventListener('submit',e=>{
-      e.preventDefault();
-      const ok=document.getElementById('formOk');
-      ok.style.display='block'; e.target.reset();
-      setTimeout(()=>ok.style.display='none',7000);
-    });
 
 
   </script>
